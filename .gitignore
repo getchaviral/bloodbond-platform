@@ -7,20 +7,53 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies
-node_modules
+# Diagnostic reports
+report.*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage
+*.lcov
+.nyc_output
+
+# Dependency directories
+node_modules/
 backend/node_modules
+bower_components
+jspm_packages
+web_modules
 
 # Build outputs
 dist
 dist-ssr
+.next
+.nuxt
+out
+.svelte-kit/
+
+# TypeScript
+*.tsbuildinfo
 
 # Environment variables
 .env
+.env.*
 backend/.env
 *.local
+!.env.example
 
-# Editor directories and files
+# Caches
+.cache
+.parcel-cache
+.eslintcache
+.stylelintcache
+.npm
+
+# Editor directories
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -30,3 +63,17 @@ backend/.env
 *.njsproj
 *.sln
 *.sw?
+
+# Misc
+.firebase/
+.serverless/
+.dynamodb/
+.tern-port
+.vscode-test
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BloodBond Full Stack Project
 
 React + Vite frontend, Node + Express backend, MongoDB database.
@@ -60,3 +61,7 @@ npm test
 Includes:
 - API validation tests
 - Middleware unit test (rate limit)
+=======
+# bloodbond-platform
+Full-stack blood donation platform with real-time donor matching, OAuth-secured backend, Redis caching, and scalable system design.
+>>>>>>> 6e4095cd8da23372aa774faaffab38ff6be817de
