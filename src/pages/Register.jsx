@@ -56,6 +56,7 @@ function Register() {
               type="text"
               placeholder="Your name"
               value={name}
+              autoComplete="name"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               onChange={(e) => setName(e.target.value)}
               required
@@ -68,6 +69,7 @@ function Register() {
               type="email"
               placeholder="you@example.com"
               value={email}
+              autoComplete="email"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -82,6 +84,7 @@ function Register() {
               type="password"
               placeholder="Minimum 6 characters"
               value={password}
+              autoComplete="new-password"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               onChange={(e) => setPassword(e.target.value)}
               minLength={6}

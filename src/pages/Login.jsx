@@ -96,6 +96,7 @@ function Login() {
               type="email"
               placeholder="you@example.com"
               value={email}
+              autoComplete="email"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -110,6 +111,7 @@ function Login() {
               type="password"
               placeholder="••••••••"
               value={password}
+              autoComplete="current-password"
               className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
               onChange={(e) => setPassword(e.target.value)}
               required
