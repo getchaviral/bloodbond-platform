@@ -143,6 +143,44 @@ const openapi = {
         },
       },
     },
+    "/api/ai/assistant": {
+      post: {
+        summary: "Ask the BloodBond AI assistant",
+        description:
+          "Answers questions about donation, blood requests, stock, events and rewards. Returns a local rule based answer when no AI provider is configured.",
+        requestBody: {
+          required: true,
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                required: ["question"],
+                properties: {
+                  question: { type: "string", maxLength: 1000 },
+                  history: {
+                    type: "array",
+                    maxItems: 6,
+                    items: {
+                      type: "object",
+                      properties: {
+                        role: { type: "string", enum: ["user", "assistant"] },
+                        content: { type: "string" },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          200: { description: "Assistant reply" },
+          400: { description: "Missing or too long question" },
+          429: { description: "Too many requests" },
+          504: { description: "Assistant timed out" },
+        },
+      },
+    },
     "/api/public/blood-stock": {
       get: {
         summary: "Search blood availability by group/location",

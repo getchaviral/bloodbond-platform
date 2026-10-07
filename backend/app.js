@@ -31,6 +31,7 @@ function createApp() {
   app.use("/api/user", require("./routes/userRoutes"));
   app.use("/api/events", require("./routes/eventsRoutes"));
   app.use("/api/public", require("./routes/publicRoutes"));
+  app.use("/api/ai", require("./routes/aiRoutes"));
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openapi));
 
   return app;
