@@ -9,6 +9,7 @@ A full-stack blood donation management system connecting **donors**, **blood ban
 ### Public Features
 - **Find Blood** — Search blood availability by blood group, state, and district
 - **Community Stories** — Testimonials from donors, recipients, and blood banks
+- **AI Assistant** — Floating chat widget on every page answering questions about donation eligibility, requests, stock, events and rewards (`POST /api/ai/assistant`)
 - **Rewards & Recognition** — Bronze, Silver, Gold donor tiers
 - **Public Events** — Browse upcoming blood donation drives
 
@@ -269,6 +270,9 @@ The login page has a **"Demo Credentials"** section with auto-fill buttons for q
 | `JWT_SECRET` | `your_secret_key` | Secret for signing JWT tokens |
 | `PORT` | `5000` | Backend server port |
 | `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated allowed origins |
+| `AI_API_KEY` | _(unset)_ | API key for the AI assistant. Any OpenAI-compatible provider (OpenAI, Groq, OpenRouter, Ollama). Unset = built-in local answers |
+| `AI_BASE_URL` | `https://api.openai.com/v1` | OpenAI-compatible endpoint base URL |
+| `AI_MODEL` | `gpt-4o-mini` | Model used by the assistant |
 
 ### Frontend (root `.env`)
 
@@ -284,6 +288,7 @@ The `docker-compose.yml` sets these automatically for the backend service:
 - `JWT_SECRET`: `docker_jwt_secret_change_me`
 - `CORS_ORIGINS`: `http://localhost:5173,http://127.0.0.1:5173`
 - `VITE_API_URL`: `http://localhost:5000/api`
+- `AI_API_KEY`, `AI_BASE_URL`, `AI_MODEL`: forwarded from the host shell so the assistant works in Docker too
 
 ---
 
