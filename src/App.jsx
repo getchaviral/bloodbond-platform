@@ -25,6 +25,7 @@ import PublicEventDetails from "./pages/PublicEventDetails";
 
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import AskAI from "./components/AskAI";
 
 function App() {
   return (
@@ -145,6 +146,7 @@ function App() {
         <Route path="/events" element={<PublicEvents />} />
         <Route path="/events/:id" element={<PublicEventDetails />} />
       </Routes>
+      <AskAI />
     </BrowserRouter>
   );
 }
